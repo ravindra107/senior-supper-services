@@ -1,0 +1,227 @@
+# Senior Supper Services - Quick Start Guide
+
+## Installation (5 minutes)
+
+### Step 1: Upload Plugin
+1. Create folder: `senior-supper-services`
+2. Place all plugin files in this folder
+3. Upload to `/wp-content/plugins/`
+
+### Step 2: Activate
+1. Go to WordPress Admin → Plugins
+2. Find "Senior Supper Services"
+3. Click "Activate"
+
+### Step 3: Initial Configuration (10 minutes)
+
+#### 3a. Configure Settings
+1. Go to **Supper Services** → **Settings**
+2. Enable days you want (leave Saturday disabled if not needed)
+3. Leave pricing at defaults:
+   - First Meal: $15.50
+   - Other Meals: $13.50
+4. Click "Save Settings"
+
+#### 3b. Add Meals
+1. Go to **Supper Services** → **Meals**
+2. For each enabled day:
+   - Select Day: Monday
+   - Meal Name: Chicken & Rice
+   - Price: (auto $15.50)
+   - Click "Add Meal"
+3. Add at least 2 meals per day
+
+#### 3c. Add Sides
+1. Go to **Supper Services** → **Sides**
+2. Add each side:
+   - Side Name: Loaf/Bread
+   - Field Type: Checkbox
+   - Price: $2.00
+   - ✓ Enable Special Instructions
+   - Click "Add Side"
+3. Repeat for: Soup, Overnight Oats, Veggies Tray, Fruit Bowl, Side Salad
+
+#### 3d. Add Dessert
+1. In **Supper Services** → **Sides**
+2. Click "Add New Side"
+3. Fill in:
+   - Side Name: Dessert
+   - Field Type: Radio
+   - Price: $2.50
+   - ✓ Enable Special Instructions
+   - Click "Add Side"
+
+#### 3e. Add Combos (Optional - for Friday only)
+1. Go to **Supper Services** → **Combos**
+2. Combo Name: 2-Way Combo
+3. Combo Type: 2-way
+4. Delivery Day: Friday
+5. Will Be Delivered On: Wednesday
+6. Number of Items: 2
+7. Price: $18.00
+8. ✓ Active
+9. Click "Add Combo"
+10. Then click "Edit Items" to add combo items
+
+## Display Form (2 minutes)
+
+### Create Page with Form
+1. Go to WordPress Pages → Add New
+2. Title: "Place Your Order"
+3. In content editor, add:
+   ```
+   [sss_order_form]
+   ```
+4. Publish page
+
+### Test Form
+1. Visit the new page
+2. Fill in test order:
+   - Name: John Doe
+   - Email: john@example.com
+   - Phone: 555-0123
+   - Address: 123 Main St
+3. Select meals and sides
+4. Submit order
+5. Check admin Orders page for the new order
+
+## Verification Checklist
+
+- ✅ Settings page shows all days
+- ✅ Meals added for each day
+- ✅ Sides all have prices
+- ✅ Dessert is set as Radio field
+- ✅ Form displays on page
+- ✅ Form is responsive
+- ✅ Test order appears in Orders list
+
+## Common Tasks
+
+### Change Pricing
+1. **Supper Services** → **Settings**
+2. Update First Meal or Other Meals price
+3. Save
+
+### Disable a Day
+1. **Supper Services** → **Settings**
+2. Uncheck the day
+3. Save
+
+### Add New Side
+1. **Supper Services** → **Sides**
+2. Click "Add New Side"
+3. Fill details
+4. Save
+
+### View Orders
+1. **Supper Services** → **Orders**
+2. See all customer orders
+3. Click "View Details" for full information
+4. Change status if needed
+
+### Change Order Status
+1. **Supper Services** → **Orders**
+2. In the Status column, select new status
+3. Auto-saves
+
+## Pricing Examples
+
+### Customer 1 (First Order on Monday)
+```
+Chicken & Rice (First Meal): $15.50 (special first meal price)
+Soup (side):                 $3.00
+Dessert:                     $2.50
+TOTAL:                       $21.00
+```
+
+### Customer 1 (Second Meal on Same Monday)
+```
+Pasta (Second Meal):         $13.50 (regular price)
+Overnight Oats (side):       $3.50
+TOTAL:                       $17.00
+```
+
+### Customer 2 (First Order)
+```
+Fish (First Meal):           $15.50 (new customer, first meal)
+TOTAL:                       $15.50
+```
+
+## Troubleshooting
+
+### Form Not Showing
+- Check shortcode is `[sss_order_form]` (no spaces)
+- Clear page cache
+- Check browser console (F12) for errors
+
+### Pricing Wrong
+- Verify meals have correct prices in **Meals** page
+- Check sides prices in **Sides** page
+- Customer email must be in order for first meal discount
+
+### Orders Not Saving
+- Check if meals are added for selected day
+- Verify customer email format
+- Check WordPress error logs
+
+### Delivery Days Don't Appear
+- Go to **Settings**
+- Make sure days are enabled (checked)
+- Save settings
+
+## Next Steps
+
+1. **Add More Content**
+   - Add meal descriptions
+   - Set unique prices for specific meals if needed
+   - Create additional combo options
+
+2. **Customize Styling**
+   - Edit `/assets/css/frontend-style.css` for form appearance
+   - Match to your website design
+
+3. **Email Setup**
+   - Configure WordPress email settings for notifications
+   - Orders → admin notifications go to admin email
+
+4. **Testing**
+   - Create test orders
+   - Verify pricing calculations
+   - Check order confirmation in admin
+
+## Support URLs
+
+- Admin Dashboard: `/wp-admin/?page=sss_dashboard`
+- Settings: `/wp-admin/?page=sss_settings`
+- Meals: `/wp-admin/?page=sss_meals`
+- Sides: `/wp-admin/?page=sss_sides`
+- Combos: `/wp-admin/?page=sss_combos`
+- Orders: `/wp-admin/?page=sss_orders`
+
+## Default Settings
+
+| Setting | Value |
+|---------|-------|
+| Monday | Enabled |
+| Tuesday | Enabled |
+| Wednesday | Enabled |
+| Thursday | Enabled |
+| Friday | Enabled |
+| Saturday | Enabled |
+| Sunday | Disabled |
+| First Meal Price | $15.50 |
+| Other Meals Price | $13.50 |
+
+## Tips & Tricks
+
+1. **Add Descriptions to Meals** - Helps customers choose
+2. **Use Special Instructions** - Let customers customize
+3. **Check Orders Daily** - Stay updated with new orders
+4. **Set Quantity Limits** - In Meal settings (if needed)
+5. **Organize Sides** - Keep frequently used sides first
+
+---
+
+**You're all set! Start taking orders.**
+
+For detailed information, see README.md and FILE_STRUCTURE.md

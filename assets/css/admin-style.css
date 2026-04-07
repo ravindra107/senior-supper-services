@@ -1,0 +1,418 @@
+/* Senior Supper Services - Admin Styles */
+
+/* Dashboard */
+.sss-dashboard-wrap {
+    background: #fff;
+    padding: 20px;
+}
+
+.sss-stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h3 {
+    margin: 0 0 10px 0;
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+.stat-number {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.sss-dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 20px;
+}
+
+.sss-recent-orders {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.sss-quick-actions {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.sss-quick-actions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sss-quick-actions li {
+    margin-bottom: 10px;
+}
+
+.sss-quick-actions a {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Settings Page */
+.sss-settings-wrap {
+    background: #fff;
+    padding: 20px;
+}
+
+.sss-settings-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid #0073aa;
+}
+
+.sss-settings-section h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.sss-settings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sss-settings-table th,
+.sss-settings-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.sss-settings-table th {
+    background: #f0f0f0;
+    font-weight: 600;
+}
+
+.sss-settings-table input,
+.sss-settings-table select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.sss-button-group {
+    margin-top: 20px;
+}
+
+.sss-button-group .button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+/* Meals Manager */
+.sss-meals-wrap,
+.sss-sides-wrap,
+.sss-combos-wrap,
+.sss-orders-wrap {
+    background: #fff;
+    padding: 20px;
+}
+
+.sss-meals-container,
+.sss-sides-container,
+.sss-combos-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+}
+
+.sss-meals-form,
+.sss-sides-form,
+.sss-combos-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    height: fit-content;
+}
+
+.sss-meals-form h2,
+.sss-sides-form h2,
+.sss-combos-form h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.sss-meals-list,
+.sss-sides-list,
+.sss-combos-list {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.sss-day-section {
+    margin-bottom: 30px;
+    background: white;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.sss-day-section h3 {
+    margin-top: 0;
+    color: #0073aa;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 10px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group .description {
+    display: block;
+    margin-top: 6px;
+    color: #888;
+    font-size: 0.9em;
+}
+
+/* Tables */
+.wp-list-table {
+    background: white;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.wp-list-table th {
+    background: #f0f0f0;
+    padding: 12px;
+    font-weight: 600;
+    border: 1px solid #ddd;
+}
+
+.wp-list-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.wp-list-table tr:hover {
+    background: #f9f9f9;
+}
+
+/* Buttons */
+.button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.button:hover {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+.button-primary {
+    background: #0073aa;
+    color: white;
+    border-color: #0073aa;
+}
+
+.button-primary:hover {
+    background: #005a87;
+    border-color: #005a87;
+}
+
+.button-secondary {
+    background: #888;
+    color: white;
+    border-color: #888;
+}
+
+.button-secondary:hover {
+    background: #666;
+    border-color: #666;
+}
+
+.button-small {
+    padding: 6px 10px;
+    font-size: 0.9em;
+}
+
+.button-link-delete {
+    color: #dc3545 !important;
+}
+
+.button-link-delete:hover {
+    background: #ffebee !important;
+}
+
+/* Combos Items */
+.sss-combo-items {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 30px;
+    border-top: 3px solid #0073aa;
+}
+
+.sss-combo-items h2 {
+    color: #0073aa;
+    margin-top: 0;
+}
+
+/* Orders List */
+.sss-filters {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.sss-filters form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+/* Modal */
+#order-details-modal {
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+#order-details-modal h2,
+#order-details-modal h3 {
+    color: #0073aa;
+    margin-top: 20px;
+}
+
+#order-details-modal h2:first-child {
+    margin-top: 0;
+}
+
+.order-details p {
+    margin: 8px 0;
+}
+
+.order-details strong {
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sss-stats-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .sss-dashboard-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .sss-meals-container,
+    .sss-sides-container,
+    .sss-combos-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .sss-meals-form,
+    .sss-sides-form,
+    .sss-combos-form {
+        height: auto;
+    }
+    
+    .sss-filters form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .sss-stats-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-box .stat-number {
+        font-size: 1.5em;
+    }
+    
+    .wp-list-table {
+        font-size: 0.9em;
+    }
+    
+    .wp-list-table th,
+    .wp-list-table td {
+        padding: 8px;
+    }
+}

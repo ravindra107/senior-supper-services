@@ -1,0 +1,367 @@
+/* Senior Supper Services - Frontend Styles */
+
+.sss-order-form-wrapper {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sss-order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Form Sections */
+.form-section {
+    background: white;
+    padding: 25px;
+    border-radius: 6px;
+    border-left: 4px solid #0073aa;
+}
+
+.form-section h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.5em;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 10px;
+}
+
+.form-section h3 {
+    color: #555;
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.day-section {
+    border-left-color: #25a89d;
+}
+
+.pricing-summary {
+    background: #f0f8f5;
+    border-left-color: #25a89d;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Sides Section */
+.sides-section {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.side-item {
+    margin-bottom: 18px;
+    padding: 12px;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid #0073aa;
+}
+
+.side-item label {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.side-item input[type="checkbox"],
+.side-item input[type="radio"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.side-item fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-item legend {
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.special-instructions-field {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.special-instructions-field label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.special-instructions-field textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.9em;
+}
+
+/* Combo Section */
+.combo-section {
+    background: #fff8f0;
+    padding: 18px;
+    border-left: 4px solid #ff9800;
+    border-radius: 4px;
+}
+
+.combo-section h3 {
+    color: #ff9800;
+    margin-top: 0;
+}
+
+.combo-item {
+    background: white;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 2px solid #ff9800;
+}
+
+.combo-item h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+.combo-item p {
+    margin: 8px 0;
+    color: #666;
+}
+
+.combo-items-list {
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.combo-items-list label {
+    display: block;
+    margin: 8px 0;
+    font-weight: normal;
+}
+
+.combo-items-list input[type="radio"] {
+    margin-right: 8px;
+}
+
+.combo-price {
+    background: #ffe0b2;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #e65100;
+    margin: 10px 0 0 0;
+}
+
+/* Pricing Summary */
+#sss-pricing-summary {
+    padding: 15px;
+    background: white;
+    border-radius: 4px;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+.pricing-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-table tr:nth-child(even) {
+    background: #f5f5f5;
+}
+
+.pricing-table .day-total td {
+    background: #e8f5e9;
+    font-weight: 600;
+    border-top: 2px solid #4caf50;
+}
+
+.pricing-table .grand-total td {
+    background: #0073aa;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1em;
+    border-top: 3px solid #0073aa;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.form-actions button {
+    padding: 12px 30px;
+    font-size: 1.05em;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.button-primary {
+    background-color: #0073aa;
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: #005a87;
+    box-shadow: 0 2px 8px rgba(0, 115, 170, 0.3);
+}
+
+.button-secondary {
+    background-color: #999;
+    color: white;
+}
+
+.button-secondary:hover {
+    background-color: #777;
+}
+
+.button-large {
+    padding: 14px 40px;
+    font-weight: 600;
+}
+
+/* Messages */
+.notice {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+    border-left: 4px solid;
+}
+
+.notice-success {
+    background-color: #d4edda;
+    border-left-color: #28a745;
+    color: #155724;
+}
+
+.notice-error {
+    background-color: #f8d7da;
+    border-left-color: #dc3545;
+    color: #721c24;
+}
+
+.notice p {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sss-order-form-wrapper {
+        padding: 20px;
+    }
+    
+    .form-section {
+        padding: 18px;
+    }
+    
+    .form-section h2 {
+        font-size: 1.3em;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions button {
+        width: 100%;
+    }
+    
+    .pricing-table {
+        font-size: 0.9em;
+    }
+    
+    .pricing-table td {
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sss-order-form-wrapper {
+        padding: 15px;
+    }
+    
+    .form-section {
+        padding: 15px;
+    }
+    
+    .form-section h2 {
+        font-size: 1.1em;
+    }
+    
+    .form-section h3 {
+        font-size: 1em;
+    }
+}
+
+/* Loading state */
+.sss-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Description text */
+.description {
+    display: block;
+    margin-top: 6px;
+    color: #888;
+    font-size: 0.9em;
+    font-weight: normal;
+}

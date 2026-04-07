@@ -1,0 +1,224 @@
+# Senior Supper Services Plugin - File Structure
+
+```
+/senior-supper-services/
+│
+├── senior-supper-services.php          # Main plugin file
+├── README.md                           # Plugin documentation
+├── FILE_STRUCTURE.md                   # This file
+│
+├── /includes/
+│   ├── /admin/
+│   │   ├── admin-pages.php            # Dashboard and main admin pages
+│   │   ├── settings.php               # Settings management
+│   │   ├── meals-manager.php          # Meals CRUD operations
+│   │   ├── sides-manager.php          # Sides/Add-ons CRUD operations
+│   │   ├── combos-manager.php         # Combos CRUD operations
+│   │   └── orders-list.php            # Orders management and viewing
+│   │
+│   ├── /database/
+│   │   └── schema.php                 # Database tables creation and utilities
+│   │
+│   ├── /forms/
+│   │   ├── form-renderer.php          # Frontend form rendering
+│   │   └── form-processor.php         # Form submission processing
+│   │
+│   └── /api/
+│       ├── pricing.php                # Pricing engine and calculations
+│       └── orders.php                 # Orders API functions
+│
+├── /templates/
+│   └── order-form.php                 # Order form template
+│
+└── /assets/
+    ├── /css/
+    │   ├── admin-style.css            # Admin panel styles
+    │   └── frontend-style.css         # Frontend form styles
+    │
+    └── /js/
+        ├── admin-script.js            # Admin functionality (optional)
+        └── frontend-script.js         # Frontend form interactivity
+```
+
+## File Descriptions
+
+### Main Plugin File
+- **senior-supper-services.php** - Main plugin file with activation hooks, menu registration, AJAX handlers, and shortcode registration
+
+### Admin Files
+- **admin-pages.php** - Dashboard with statistics and quick actions
+- **settings.php** - Plugin settings (enable/disable days, pricing configuration)
+- **meals-manager.php** - Add/Edit/Delete meals organized by delivery day
+- **sides-manager.php** - Add/Edit/Delete sides/add-ons with field types
+- **combos-manager.php** - Add/Edit/Delete combo meals and their items
+- **orders-list.php** - View, filter, search, and manage customer orders
+
+### Database Files
+- **schema.php** - Database table creation, default settings initialization, utility functions for getting/updating settings
+
+### Form Files
+- **form-renderer.php** - Renders the complete customer-facing order form with all fields and sections
+- **form-processor.php** - Processes form submissions, validates data, creates orders and order items
+
+### API Files
+- **pricing.php** - Pricing calculations, customer verification, price formatting functions
+- **orders.php** - Order retrieval, filtering, searching, export (CSV/JSON) functions
+
+### Frontend Templates
+- **order-form.php** - Wrapper template for the order form shortcode
+
+### Assets
+- **admin-style.css** - Admin dashboard and management page styles
+- **frontend-style.css** - Customer-facing form styles and responsive design
+- **admin-script.js** - Optional admin panel JavaScript functionality
+- **frontend-script.js** - Form interactivity, pricing updates, AJAX submissions
+
+## Database Tables Created
+
+```
+wp_sss_meals
+├── id (BIGINT PRIMARY KEY)
+├── day_of_week (VARCHAR)
+├── meal_name (VARCHAR)
+├── description (LONGTEXT)
+├── price (DECIMAL)
+├── status (TINYINT)
+├── created_at (TIMESTAMP)
+└── updated_at (TIMESTAMP)
+
+wp_sss_sides
+├── id (BIGINT PRIMARY KEY)
+├── side_name (VARCHAR)
+├── field_type (VARCHAR) - checkbox, radio, dropdown
+├── price (DECIMAL)
+├── has_instructions (TINYINT)
+├── status (TINYINT)
+├── created_at (TIMESTAMP)
+└── updated_at (TIMESTAMP)
+
+wp_sss_combos
+├── id (BIGINT PRIMARY KEY)
+├── combo_name (VARCHAR)
+├── combo_type (VARCHAR)
+├── delivery_day (VARCHAR)
+├── delivery_on_day (VARCHAR)
+├── price (DECIMAL)
+├── num_items_to_select (INT)
+├── status (TINYINT)
+├── created_at (TIMESTAMP)
+└── updated_at (TIMESTAMP)
+
+wp_sss_combo_items
+├── id (BIGINT PRIMARY KEY)
+├── combo_id (BIGINT FOREIGN KEY)
+├── item_name (VARCHAR)
+├── item_price (DECIMAL)
+├── status (TINYINT)
+└── created_at (TIMESTAMP)
+
+wp_sss_settings
+├── id (BIGINT PRIMARY KEY)
+├── setting_key (VARCHAR UNIQUE)
+├── setting_value (LONGTEXT)
+├── created_at (TIMESTAMP)
+└── updated_at (TIMESTAMP)
+
+wp_sss_orders
+├── id (BIGINT PRIMARY KEY)
+├── customer_name (VARCHAR)
+├── customer_email (VARCHAR)
+├── customer_phone (VARCHAR)
+├── customer_address (LONGTEXT)
+├── order_date (DATE)
+├── delivery_days (LONGTEXT)
+├── total_price (DECIMAL)
+├── order_notes (LONGTEXT)
+├── status (VARCHAR) - pending, confirmed, delivered, cancelled
+├── created_at (TIMESTAMP)
+└── updated_at (TIMESTAMP)
+
+wp_sss_order_items
+├── id (BIGINT PRIMARY KEY)
+├── order_id (BIGINT FOREIGN KEY)
+├── item_type (VARCHAR) - meal, side, dessert, combo, special_instruction
+├── item_name (VARCHAR)
+├── item_price (DECIMAL)
+├── quantity (INT)
+├── special_instructions (LONGTEXT)
+├── subtotal (DECIMAL)
+└── created_at (TIMESTAMP)
+```
+
+## Admin Menu Structure
+
+```
+Supper Services
+├── Dashboard
+├── Settings
+├── Meals
+├── Sides
+├── Combos
+└── Orders
+```
+
+## Key Classes
+
+- **Senior_Supper_Services** - Main plugin class with hooks and initialization
+- **SSS_Database_Schema** - Database operations and utilities
+- **SSS_Settings** - Settings management page
+- **SSS_Meals_Manager** - Meals management CRUD
+- **SSS_Sides_Manager** - Sides management CRUD
+- **SSS_Combos_Manager** - Combos management CRUD
+- **SSS_Orders_List** - Orders management and display
+- **SSS_Form_Renderer** - Frontend form rendering
+- **SSS_Form_Processor** - Form submission processing
+- **SSS_Pricing_Engine** - Pricing calculations
+- **SSS_Orders_API** - Orders API functions
+
+## AJAX Handlers
+
+- `sss_get_meals` - Fetch meals for a specific day
+- `sss_calculate_price` - Calculate order total price
+- `sss_submit_form` - Submit order form
+- `sss_get_order_details` - Get order details for modal view
+- `sss_get_meal_price` - Get single meal price with verification
+
+## Shortcodes
+
+- `[sss_order_form]` - Display the customer order form
+
+## Plugin Hooks
+
+### Actions
+- `sss_order_submitted` - Fired when order is submitted (includes order_id, customer_name, customer_email)
+
+### Filters
+- None currently, but can be extended
+
+## Installation Checklist
+
+1. ✅ Create plugin folder: `/wp-content/plugins/senior-supper-services/`
+2. ✅ Copy all files maintaining folder structure
+3. ✅ Activate plugin in WordPress admin
+4. ✅ Go to Supper Services → Settings
+5. ✅ Enable/disable delivery days as needed
+6. ✅ Set pricing if different from defaults
+7. ✅ Add meals for each day in Supper Services → Meals
+8. ✅ Add sides in Supper Services → Sides
+9. ✅ Add combos (optional) in Supper Services → Combos
+10. ✅ Create page and add shortcode `[sss_order_form]`
+11. ✅ Test form functionality
+
+## Development Notes
+
+- All queries use WordPress wpdb prepare() for security
+- All user input is sanitized using appropriate WordPress functions
+- All output is escaped using esc_html(), esc_attr(), etc.
+- Plugin follows WordPress coding standards
+- Database prefix is used dynamically for multi-site compatibility
+- Admin pages use nonces for security
+- AJAX endpoints verify nonces
+
+---
+
+**For more information, see README.md**
